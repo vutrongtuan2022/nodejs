@@ -9,6 +9,7 @@ import EffectPreviewAvatar from "./useEffect/EffectPreviewAvatar";
 import AvatarPreview from "./AvatarPreview/AvatarPreview";
 import FakeChatApp from "./useEffect/FakeChatApp";
 import ReducerHook from "./ReducerHook/ReducerHook";
+import TodoAppReducerHook from "./ReducerHook/TodoAppReducerHook";
 export default function MountedUnmounted() {
   const [show, setShow] = useState(false);
   return (
@@ -21,7 +22,7 @@ export default function MountedUnmounted() {
       {/* {show && <EffectWithDependencies/>} */}
       {/* {show && <EffectDom/>} */}
       {/* {show&& <EffectTimer/>} */}
-      {show && <ReducerHook />}
+      {show && <TodoAppReducerHook />}
       {/* {show&& <EffectPreviewAvatar/>} */}
     </div>
   );

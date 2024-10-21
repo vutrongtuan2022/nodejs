@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { forwardRef } from "react";
 
-export default function Input({label,...inputProps}) {
+const Input = forwardRef(({ label, ...inputProps }, ref) => {
   return (
     <div>
-        <label>{label}</label>
-        <input {...inputProps}/>
+      <label>{label}</label>
+      <input ref={ref} {...inputProps} />
     </div>
-  )
-}
+  );
+});
+
+export default Input;

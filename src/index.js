@@ -4,6 +4,9 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import MountedUnmounted from "./components/MountedUnmounted";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+const queryClient = new QueryClient();
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 function fakeComment(id) {
   setInterval(() => {
@@ -19,8 +22,11 @@ fakeComment(2);
 fakeComment(3);
 root.render(
   <React.StrictMode>
-    <App />
-    <MountedUnmounted />
+    <QueryClientProvider client={queryClient}>
+      <App />
+    </QueryClientProvider>
+
+    {/* <MountedUnmounted /> */}
   </React.StrictMode>
 );
 
