@@ -4,3 +4,9 @@ còn đối với from-data thì sẽ phải sử dụng req.body
 app.use(express.urlencoded({ extended: true }));
 // file JSON để xử lý form data (quan trọng)
 app.use(express.json());
+  app.post("/search", (req, res) => {
+    console.log(req.body);
+    // res.send(`Data received: ${JSON.stringify(req.body)}`);
+    res.send(""); // Render file `resources/views/search.handlebars`
+    // trong trường hợp này không sử dụng render mà dùng send thì chỉ dùng để hiển thị 1 chuỗi rỗng
+  });

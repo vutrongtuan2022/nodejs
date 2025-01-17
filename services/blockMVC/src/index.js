@@ -3,7 +3,9 @@ const express = require("express");
 const morgan = require("morgan");
 const { engine } = require("express-handlebars"); // Import `engine` từ `express-handlebars`
 const app = express();
-const port = 8000;
+const port = 8080;
+
+const router=require('./router')
 
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -25,25 +27,11 @@ app.engine(
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "resources/views")); // Đặt đúng đường dẫn đến thư mục views
 
-// Route
-app.get("/", (req, res) => {
-  res.render("home"); // Render file `resources/views/home.handlebars`
-});
+// Route init
 
-app.get("/news", (req, res) => {
-  res.render("news"); // Render file `resources/views/news.handlebars`
-});
+router(app);
 
-app.get("/search", (req, res) => {
-  res.render("search"); // Render file `resources/views/search.handlebars`
-});
 
-app.post("/search", (req, res) => {
-  console.log(req.body);
-  // res.send(`Data received: ${JSON.stringify(req.body)}`);
-  res.send(""); // Render file `resources/views/search.handlebars`
-  // trong trường hợp này không sử dụng render mà dùng send thì chỉ dùng để hiển thị 1 chuỗi rỗng
-});
 
 // Start server
 app.listen(port, () => {
