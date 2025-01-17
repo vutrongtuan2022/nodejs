@@ -1,0 +1,6 @@
+đối với lấy dữ liệu từ phía cleint qua Query parameters thì sẽ phải sử dụng req.query 
+còn đối với from-data thì sẽ phải sử dụng req.body 
+// Middleware để xử lý form data (quan trọng)
+app.use(express.urlencoded({ extended: true }));
+// file JSON để xử lý form data (quan trọng)
+app.use(express.json());

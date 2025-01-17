@@ -1,0 +1,24 @@
+{{!-- sử dụng query parameters thì sẽ có các bước sau
+b1: dấu hỏi chấm (?) đến key = text ví dụ
+?q=lam lap trinh
+bước 2 thì các tìm kiếm sau sẽ là dấu và (&)
+--}}
+
+<div class="search-form">
+    <form method="POST" action="">
+        <div class="mb-3 mt-3">
+            <label for="searchInput" class="form-label">Tìm kiếm</label>
+            <input type="text" class="form-control" id="searchInput" placeholder="Nhập từ khóa" name="q">
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="gender-input" class="form-label">Giới tính</label>
+            <select class="form-control" id="gender-input" name="gender-input">
+                <option value="">--chọn giới tính---</option>
+                <option value="male">Nam</option>
+                <option value="female">Nữ</option>
+                <option value="everyone">Khác</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+</div>
