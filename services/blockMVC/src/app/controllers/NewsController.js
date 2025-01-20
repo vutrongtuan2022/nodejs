@@ -1,12 +1,12 @@
 class NewsController {
   //[GET] /new
   index(req, res) {
-    res.render("news");
+    res.render('news');
   }
 
   //[GET] /new/:slug
   show(req, res) {
-    res.send("NEW DETAIL!!!");
+    res.send('NEW DETAIL!!!');
   }
 }
 
