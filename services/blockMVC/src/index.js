@@ -32,6 +32,6 @@ app.set('views', path.join(__dirname, 'resources/views')); // Đặt đúng đư
 router(app);
 
 // Start server
-              app.listen(port, () => {
-                console.log(`Example app listening on port ${port}`);
-              });
+  app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`);
+  });
